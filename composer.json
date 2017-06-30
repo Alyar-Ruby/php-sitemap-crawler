@@ -1,0 +1,22 @@
+{
+    "name": "olden/parser",
+    "authors": [
+        {
+            "name": "Alexander Kotynia",
+            "email": "aleksander.kot@gmail.com"
+        }
+    ],
+    "require": {
+        "fabpot/goutte": "^3.2",
+        "phpoffice/phpexcel": "^1.8",
+        "symfony/console": "^3.2",
+        "mekras/php-speller": "^1.7",
+        "symfony/finder": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Olden\\": "src/Olden"
+        }
+    },
+    "bin": ["bin/parse"]
+}
