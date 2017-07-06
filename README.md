@@ -20,8 +20,19 @@ php parser.phar parse --with-spellcheck --dict-path[=DICT-PATH]
 --dict-path[=DICT-PATH]  Txt file with stopwords for spellcheck. 
                          Single word on file row (see stopwords_example.txt in project root for example)
 ```
-In results will be generated: parsed.xlsx file
+In results will be generated: yymmddHHMMSS.xlsx file
 You can run code without compilation (after changes for example):
 ```
 php bin/parser parse --with-spellcheck --dict-path[=DICT-PATH]
+```
+
+## Run diff tool:
+```
+php diff.phar diff
+
+```
+In results will be generated: changes.xlsx file
+You can run code without compilation (after changes for example):
+```
+php bin/diff diff
 ```

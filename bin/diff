@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+ini_set('memory_limit', -1);
+
+require __DIR__.'/../vendor/autoload.php';
+
+use Olden\Commands\DiffCommand;
+use Symfony\Component\Console\Application;
+
+// Initialise console application (see http://symfony.com/doc/current/components/console.html)
+$application = new Application('check famous-smoke.com update tool');
+// Add parse command to it
+$application->add(new DiffCommand);
+// run it
+$application->run();

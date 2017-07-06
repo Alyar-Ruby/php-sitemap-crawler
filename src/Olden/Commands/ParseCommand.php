@@ -136,7 +136,8 @@ class ParseCommand extends Command
             }
             $file = PHPExcel_IOFactory::createWriter($excel, "Excel2007");
             #to do - add date
-            $file->save(getcwd() . "/parsed.xlsx");
+            $filetitle = date("ymdHis");
+            $file->save(getcwd() . "/" . $filetitle . ".xlsx");
         }
     }
 }

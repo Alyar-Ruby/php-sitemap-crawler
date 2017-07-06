@@ -44,4 +44,47 @@ class PageConstants
         "NAGIF",
         "ALT TAG"
     ];
+
+    const REPORT_CHANGES_HEADERS = [
+        "RUN",      // This field is added only, contains name of report file
+        "URL",
+        "CANONICAL URL",
+        "INDEX",
+        "TITLE",
+        "TITLE COMPARISON",
+        "META DESCRIPTION",
+        "META DESCRIPTION SPELL CHECK",
+        "HEADER H1",
+        "H1 COMPARISON",
+        "SEO PARAGRAPH",
+        "SEO PARAGRAPH SPELL CHECK",
+        "BREADCRUMBS TEXT",
+        "BREADCRUMBS COMPARISON",
+        "BREADCRUMBS LINK",
+        "IDENTIFIED",
+        "NAGIF",
+        "ALT TAG"
+    ];
+
+    const REPORT_DETAILS_HEADERS = [
+        "URL",
+        "CANONICAL URL",
+        "INDEX",
+        "TITLE",
+        "TITLE COMPARISON",
+        "META DESCRIPTION",
+        "META DESCRIPTION SPELL CHECK",
+        "HEADER H1",
+        "H1 COMPARISON",
+        "SEO PARAGRAPH",
+        "SEO PARAGRAPH SPELL CHECK",
+        "BREADCRUMBS TEXT",
+        "BREADCRUMBS COMPARISON",
+        "BREADCRUMBS LINK",
+        "IDENTIFIED",
+        "NAGIF",
+        "ALT TAG",
+        "CHECKED DATE",     // Modification check Date/Time
+        "CHANGE STATUS"     // Modified Status  ("Add" or "Remove")
+    ];
 }
