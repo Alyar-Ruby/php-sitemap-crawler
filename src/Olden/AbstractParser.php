@@ -115,6 +115,9 @@ abstract class AbstractParser
                 if ($qty % 10 == 0) {
                     $this->displayPagesCalculation($qty);
                 }
+		
+		// Sleep 0.4~2 seconds, delay per each scraping items
+		usleep((rand() % 16000 + 4000) * 100);
 
                 $qty++;
             });
@@ -158,6 +161,9 @@ abstract class AbstractParser
                 // write parsed data to excel row
                 $this->workseet->fromArray(array_map('trim', $data), null, "A" . ($i+2));
 
+                // Sleep 0.4~2 seconds, delay per each scraping items
+		usleep((rand() % 16000 + 4000) * 100);
+		
                 $i++;
             }
 
