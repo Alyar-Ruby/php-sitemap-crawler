@@ -12,6 +12,7 @@ use PHPExcel_IOFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
@@ -33,6 +34,11 @@ class ParseCommand extends Command
     {
         $this->setName('parse')
             ->setDescription('Parse brands & items pages')
+            ->addArgument(
+                'output-name',
+                InputArgument::OPTIONAL, 
+                'Report file name'
+            )
             ->addOption(
                 'with-spellcheck',
                 null,
@@ -136,8 +142,13 @@ class ParseCommand extends Command
             }
             $file = PHPExcel_IOFactory::createWriter($excel, "Excel2007");
             #to do - add date
-            $filetitle = date("ymdHis");
-            $file->save(getcwd() . "/" . $filetitle . ".xlsx");
+            $filename = $input->getArgument('output-name');
+            if (strcmp($filename, "") == 0) {
+                $filetitle = date("ymdHis");
+                $filename = $filetitle . ".xlsx";
+            }
+            
+            $file->save(getcwd() . "/" . $filename);
         }
     }
 }
