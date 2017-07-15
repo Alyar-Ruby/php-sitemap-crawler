@@ -61,6 +61,23 @@ class ParseCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        // Instead of creating report file, make an empty file.
+        {
+            #to do - add date
+            $filename = $input->getArgument('output-name');
+            if (strcmp($filename, "") == 0) {
+                $filetitle = date("ymdHis");
+                $filename = $filetitle . ".xlsx";
+            }
+            
+            echo(getcwd() . "/" . $filename);
+            
+            $myfile = fopen(getcwd() . "/" . $filename, "w");
+            fclose($myfile);
+
+            return;
+        }
+
         // initialise PHPExcel class
         $excel = new PHPExcel();
 
